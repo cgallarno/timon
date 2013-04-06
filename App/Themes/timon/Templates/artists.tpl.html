@@ -1,8 +1,16 @@
+<ng-include src="GetNavigation()"></ng-include>
 <ng-include src="GetTabList()"></ng-include>
+<p class="custom-search">
+	<div class="search">
+		<input type="search"  placeholder="Search..." class="search-field input-large" ng-model="search" />
+	</div>
+</p>
 <div class="row-fluid">
 	<h1>Artists</h1>
 	<ul>
-		<li ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.artist_name'">
+		<li ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.artist_name'">
+			<h4>{{song.track.track_name}}</h4>
+			<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
 			<p>{{song.track.artist_name}} </p>
 		</li>
 	</ul> 
