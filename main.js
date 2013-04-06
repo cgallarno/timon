@@ -19,6 +19,10 @@ function homeController($scope,$http,$route, $routeParams, $location){
 	console.log( $scope.Top5Tracks);
 }
 
+function searchController($scope,$http,$route, $routeParams, $location){
+    
+}
+
 
 // function HomeController($scope,$http,$route, $routeParams, $location) {
 //     $scope.$route = $route;

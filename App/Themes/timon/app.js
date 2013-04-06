@@ -1,7 +1,8 @@
 "use strict";
 
 var app = angular.module('myApp',[], function($routeProvider, $locationProvider){
-	$routeProvider.when('/', { templateUrl: theme_tpl_directory + 'home.tpl.html', controller: homeController });
+    $routeProvider.when('/', { templateUrl: theme_tpl_directory + 'home.tpl.html', controller: homeController });
+	$routeProvider.when('/search', { templateUrl: theme_tpl_directory + 'search.tpl.html', controller: searchController });
 	// $routeProvider.when('/read', { templateUrl: theme_tpl_directory + 'read.tpl.html', controller: GeoItemListController });
 	// $routeProvider.when('/create', { templateUrl: theme_tpl_directory + 'create.tpl.html', controller: CreateController });
 	// $routeProvider.when('/update', { templateUrl: theme_tpl_directory + 'update.tpl.html', controller: GeoItemListController });
@@ -41,33 +42,30 @@ app.run(function($rootScope, $templateCache, $location) {
     $rootScope.GetFooter = function(){
         return theme_tpl_directory + 'footer.tpl.html';
     }; 
-    $rootScope.GetTabList = function() {
- 		return theme_tpl_directory + 'tabs.tpl.html';
-    };
 });
 
-// app.factory('db', function() {  
-// 	var geobucket =[];
-//   	var plus = {};
-// 	plus.getGeoBucket = function(){
-// 		var crypt = Aes.Ctr.encrypt("hello", secret_key, 256);
-// 		// $http.get('http://api.plus.io/'+app_id+'/GetGeoBucket?sig='+crypt+'&callback=').success(function(data) {
-// 		//   $scope.geobucket = data;
-// 		// //  console.log($scope.geobucket);
-// 		// });
+app.factory('db', function() {  
+	var geobucket =[];
+  	var plus = {};
+	plus.getGeoBucket = function(){
+		var crypt = Aes.Ctr.encrypt("hello", secret_key, 256);
+		// $http.get('http://api.plus.io/'+app_id+'/GetGeoBucket?sig='+crypt+'&callback=').success(function(data) {
+		//   $scope.geobucket = data;
+		// //  console.log($scope.geobucket);
+		// });
 
-// 		$.ajax({
-// 		   type: "GET",
-// 		   url: 'http://api.plus.io/' + app_id + '/GetGeoBucket?sig='+crypt+'&callback=',
-// 		   async: true,
-// 		   dataType: 'json',
-// 		   //data: "name=John&location=Boston",
-// 		   success: function(data){
-// 		   		geobucket = data;
-// 		   		console.log('Data returned');
-// 		   }
-// 		 });
-// 	}
+		$.ajax({
+		   type: "GET",
+		   url: 'http://api.plus.io/' + app_id + '/GetGeoBucket?sig='+crypt+'&callback=',
+		   async: true,
+		   dataType: 'json',
+		   //data: "name=John&location=Boston",
+		   success: function(data){
+		   		geobucket = data;
+		   		console.log('Data returned');
+		   }
+		 });
+	}
 
-//   return plus; // returning this is very important
-// });
+  return plus; // returning this is very important
+});
