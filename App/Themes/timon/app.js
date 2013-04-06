@@ -33,7 +33,7 @@ app.run(function($rootScope, $templateCache, $location) {
     };
 
     $rootScope.GetNavigation = function(){
-        return theme_tpl_directory + 'navigation.tpl.html';
+        return theme_tpl_directory + 'nav.tpl.html';
     }; 
     $rootScope.GetHeader = function(){
         return theme_tpl_directory + 'header.tpl.html';
@@ -43,28 +43,28 @@ app.run(function($rootScope, $templateCache, $location) {
     }; 
 });
 
-app.factory('db', function() {  
-	var geobucket =[];
-  	var plus = {};
-	plus.getGeoBucket = function(){
-		var crypt = Aes.Ctr.encrypt("hello", secret_key, 256);
-		// $http.get('http://api.plus.io/'+app_id+'/GetGeoBucket?sig='+crypt+'&callback=').success(function(data) {
-		//   $scope.geobucket = data;
-		// //  console.log($scope.geobucket);
-		// });
+// app.factory('db', function() {  
+// 	var geobucket =[];
+//   	var plus = {};
+// 	plus.getGeoBucket = function(){
+// 		var crypt = Aes.Ctr.encrypt("hello", secret_key, 256);
+// 		// $http.get('http://api.plus.io/'+app_id+'/GetGeoBucket?sig='+crypt+'&callback=').success(function(data) {
+// 		//   $scope.geobucket = data;
+// 		// //  console.log($scope.geobucket);
+// 		// });
 
-		$.ajax({
-		   type: "GET",
-		   url: 'http://api.plus.io/' + app_id + '/GetGeoBucket?sig='+crypt+'&callback=',
-		   async: true,
-		   dataType: 'json',
-		   //data: "name=John&location=Boston",
-		   success: function(data){
-		   		geobucket = data;
-		   		console.log('Data returned');
-		   }
-		 });
-	}
+// 		$.ajax({
+// 		   type: "GET",
+// 		   url: 'http://api.plus.io/' + app_id + '/GetGeoBucket?sig='+crypt+'&callback=',
+// 		   async: true,
+// 		   dataType: 'json',
+// 		   //data: "name=John&location=Boston",
+// 		   success: function(data){
+// 		   		geobucket = data;
+// 		   		console.log('Data returned');
+// 		   }
+// 		 });
+// 	}
 
-  return plus; // returning this is very important
-});
+//   return plus; // returning this is very important
+// });

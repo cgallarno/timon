@@ -17,6 +17,7 @@ var modules = [
               '+angular', 
               '+angular-resources', 
               '+plus', 
+              '+script',
               'App/Themes/'+active_theme+'/app.js',
               'main.js'
               ];
