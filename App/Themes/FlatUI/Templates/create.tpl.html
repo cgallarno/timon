@@ -1,0 +1,93 @@
+
+  	<div class="container-fluid">
+
+  		<ng-include src="GetNavigation()"></ng-include>
+
+
+		<div class="alert" id="no-loc">
+		  <button type="button" class="close" data-dismiss="alert">&times;</button>
+		  <strong>Uh Oh!</strong> Your device doesn't support GeoLocation, sorry.
+		</div>
+
+		<div class="row-fluid">
+			<div class=" palette palette-info-dark">
+					<h1>Create a Geolocation item.</h1>
+					<p>Use your current location or tap a point on the map</p>
+			</div>
+		</div>
+
+		<div id="map"></div>
+		<form>
+			<select value="tag" id="tag" class="input-block-level">
+				<option ng-repeat="item in listData | filter: search | orderBy: 'item.name'" value="{{item.Name}}">{{item.Name}}</option>
+			</select>
+			<textarea id="meta" placeholder="Description" class="input-block-level"></textarea>
+			<button id="form-submit" class="btn btn-success btn-block btn-large">Save Location</button>
+		</form>
+
+	</div>
+
+    <script>
+   		var marker,
+    		map = L.map('map').setView([38.895914, -77.034993], 10);
+
+    	var defaultIcon = L.icon({
+		    iconUrl: 'App/Themes/FlatUI/img/marker-icon.png',
+		    shadowUrl: 'App/Themes/FlatUI/img/marker-shadow.png',
+
+		    iconSize:     [25, 41], // size of the icon
+		    shadowSize:   [41, 41], // size of the shadow
+		    iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
+		    shadowAnchor: [12, 41],  // the same for the shadow
+		    popupAnchor:  [0, -46] // point from which the popup should open relative to the iconAnchor
+		});
+
+    	$(document).ready(function(){
+
+   			L.tileLayer('http://b.tiles.mapbox.com/v3/cgallarno.map-ncz0yl38/{z}/{x}/{y}.png', {
+	    		maxZoom: 18,
+	    		minZoom: 5
+			}).addTo(map);
+
+			if (navigator.geolocation){
+				navigator.geolocation.getCurrentPosition(showPosition);
+			}else{
+				$('#no-loc').show();
+			}
+
+			map.on('click', onMapClick);
+
+			$('#form-submit').on('click', function(){
+				console.log('click');
+				var loc = marker.getLatLng(),
+					tag = $('#tag :selected').val(),
+					meta = $('#meta').val();
+					console.log(tag, loc.lat, loc.lng, meta);
+				plus.addGeoItem(tag, loc.lat, loc.lng, meta);
+				document.location.href = "#/read/geo-items-map/"+loc.lat+'/'+loc.lng;
+			});
+
+    	});
+
+    	function onMapClick(e) {
+    		if (typeof marker !== 'undefined')
+				map.removeLayer(marker);
+
+			marker = new L.marker(e.latlng, {icon: defaultIcon});
+			map.addLayer(marker);
+			map.setView(e.latlng, map.getZoom());
+		}
+	
+		function showPosition(position){
+			if (typeof marker !== 'undefined')
+				map.removeLayer(marker);
+
+			marker = new L.marker([position.coords.latitude, position.coords.longitude], {icon: defaultIcon});
+			map.addLayer(marker);
+			map.setView([position.coords.latitude, position.coords.longitude], 15);
+		}
+	</script>
+
+
+  </body>
+</html>

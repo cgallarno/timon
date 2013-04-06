@@ -1,0 +1,70 @@
+
+  	<div class="container-fluid">
+
+<ng-include src="GetNavigation()"></ng-include>
+		<div class="row-fluid">
+			<div class="palette palette-info-dark">
+				<h1 class="span12">Delete Geo<wbr />location items.</h1>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+
+		<br />
+		<button class="btn btn-danger btn-block btn-large">Delete Selected</button>	
+		<br />
+
+		<div class="custom-search">
+			<div class="search">
+				<input type="search"  placeholder="Search..." class="search-field input-large" ng-model="search" />
+			</div>
+		</div>
+
+		<ul class="nav nav-pills nav-stacked palette palette-info-dark" id="delete">
+			<li ng-repeat="item in listData | filter: search | orderBy: 'item.name'">
+				<label class="checkbox btn btn-block btn-large btn-info" for="checkbox{{$index}}">
+					<input type="checkbox" value="{{item.Key}}" id="checkbox{{$index}}">
+					{{item.SmallKey}}
+				</label>
+           	</li>
+		</ul>
+		<br />
+		<button class="btn btn-danger btn-block btn-large">Delete Selected</button>	
+		<br />
+	</div>
+
+	<script>
+	// Custom checkbox and radios
+	function setupLabel() {
+	    // Checkbox
+	    var checkBox = ".checkbox";
+	    var checkBoxInput = checkBox + " input[type='checkbox']";
+	    var checkBoxChecked = "checked";
+	    var checkBoxDisabled = "disabled";
+
+	    // Checkboxes
+	    if ($(checkBoxInput).length) {
+	        $(checkBox).each(function(){
+	            $(this).removeClass(checkBoxChecked);
+	        });
+	        $(checkBoxInput + ":checked").each(function(){
+	            $(this).parent(checkBox).addClass(checkBoxChecked);
+	        });
+	        $(checkBoxInput + ":disabled").each(function(){
+	            $(this).parent(checkBox).addClass(checkBoxDisabled);
+	        });
+	    };
+	};
+
+	$(document).ready(function(){
+	    $("html").addClass("has-js");
+
+	    // First let's prepend icons (needed for effects)
+	    $(".checkbox").prepend("<span class='icon'></span><span class='icon-to-fade'></span>");
+
+	    $("ul").on('click', '.checkbox', function(){
+	        setupLabel();
+	    });
+	    setupLabel();
+	});
+
+</script>	

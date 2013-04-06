@@ -1,0 +1,79 @@
+  	<script>var masterLatLng;</script>
+  	<div class="container-fluid" ng-controller="GeoItemDetailsController">
+
+  		<ng-include src="GetNavigation()"></ng-include>
+
+
+		<a href="#/read" id="previous-btn" class="btn btn-info pull-left btn-mini"><i class="icon icon-chevron-left icon-white"></i>Previous</a>
+
+		<div class="row-fluid">
+			<div class="title palette palette-info-dark">
+					<h1>{{item.SmallKey}}.</h1>
+			<a href="#/update/{{item.Key}}" class="btn btn-warning btn-mini pull-right">Edit</a>
+
+			</div>
+
+			
+		</div>
+
+		<div id="map"></div>
+
+		<div class="row-fluid item-details">
+			<div class="span6 palette palette-night">Lat:<br />{{item.Latitude}}</div>
+			<div class="span6 palette palette-night">Long:<br />{{item.Longitude}}</div>
+		</div>
+		<div class="row-fluid item-details">
+			<div class="span6 palette palette-night">Date:<br /><span id="time">{{item.Time}}</span></div>
+			<div class="span6 palette palette-night">Tag:<br />{{item.Tag}}</div>
+		</div>
+		<div class="row-fluid item-details">
+			<div class="span12 palette palette-night">Meta: {{item.Meta}}</div>
+		</div>
+
+		<br />
+	</div>
+
+
+
+    <script>
+    	var map = L.map('map').setView([38.895914, -77.034993], 10);
+    	map.doubleClickZoom.disable();
+    	map.dragging.disable();
+    	map.touchZoom.disable();
+    	map.scrollWheelZoom.disable();
+    	map.boxZoom.disable();
+    	map.keyboard.disable();
+  //   	var greenIcon = L.icon({
+		//     iconUrl: 'http://leafletjs.com/docs/images/leaf-green.png',
+		//     shadowUrl: 'http://leafletjs.com/docs/images/leaf-shadow.png',
+
+		//     iconSize:     [38, 95], // size of the icon
+		//     shadowSize:   [50, 64], // size of the shadow
+		//     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+		//     shadowAnchor: [4, 62],  // the same for the shadow
+		//     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+		// });
+
+		var defaultIcon = L.icon({
+		    iconUrl: 'App/Themes/FlatUI/img/marker-icon.png',
+		    shadowUrl: 'App/Themes/FlatUI/img/marker-shadow.png',
+
+		    iconSize:     [25, 41], // size of the icon
+		    shadowSize:   [41, 41], // size of the shadow
+		    iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
+		    shadowAnchor: [12, 41],  // the same for the shadow
+		    popupAnchor:  [0, -46] // point from which the popup should open relative to the iconAnchor
+		});
+
+     	$(document).ready(function(){
+			
+
+    		L.tileLayer('http://b.tiles.mapbox.com/v3/cgallarno.map-ncz0yl38/{z}/{x}/{y}.png', {
+	    		maxZoom: 16,
+	    		minZoom: 10
+			}).addTo(map);
+
+
+     	});
+
+	</script>
