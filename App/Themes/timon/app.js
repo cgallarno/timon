@@ -41,6 +41,9 @@ app.run(function($rootScope, $templateCache, $location) {
     $rootScope.GetFooter = function(){
         return theme_tpl_directory + 'footer.tpl.html';
     }; 
+    $rootScope.GetTabList = function() {
+ 		return theme_tpl_directory + 'tabs.tpl.html';
+    };
 });
 
 // app.factory('db', function() {  

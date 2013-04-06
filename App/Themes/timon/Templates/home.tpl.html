@@ -22,26 +22,31 @@
 </head>
 <body>
 <ng-include src="GetNavigation()"></ng-include>
-
 	<div id="wrapper">
 		<!-- HEADER -->
-			<div id="header" class="navbar navbar-inverse navbar-fixed-top">
-			  <div class="navbar-inner">
-			  	<ul class="nav">
-			      <li class="menu"><a href="#"><i class="icon-list icon-white"></i></a></li>
-			    </ul>
-			    <a class="brand" href="#">Timon</a>
-			  </div>
-			</div>
-		
-
+		<div id="header" class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="navbar-inner">
+		  	<ul class="nav">
+		      <li class="menu"><a href="#"><i class="icon-list icon-white"></i></a></li>
+		    </ul>
+		    <a class="brand" href="#">Timon</a>
+		  </div>
+		</div>
 		<div class="row-fluid">
 			<div class="span6 top-imgs"><img src="http://horrordisco.com/wp-content/uploads/2012/11/thrift-shop-large.jpg" alt=""></div>
 			<div class="span6 top-imgs"><img src="http://musictrajectory.com/wp-content/uploads/2013/01/imagine-dragons-night-visions-album-cover-640x420.jpg" alt=""></div>
 		</div>
-
+		<ng-include src="GetTabList()"></ng-include>
+		<ng-include src="GetSelectedTabContent()"></ng-include>
 		<div class="row-fluid">
-			<ul></ul>
+			<h1>Top 5 Tracks</h1>
+			<ul>
+				<li ng-repeat="song in Top5Tracks">
+					<h4>{{song.track.track_name}}</h4>
+					<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
+					<p>{{song.track.artist_name}} </p>
+				</li>
+			</ul>
 		</div>
 	</div>
 
