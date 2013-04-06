@@ -1,0 +1,9 @@
+<ng-include src="GetTabList()"></ng-include>
+<div class="row-fluid">
+	<h1>Artists</h1>
+	<ul>
+		<li ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.artist_name'">
+			<p>{{song.track.artist_name}} </p>
+		</li>
+	</ul> 
+</div>
