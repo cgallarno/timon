@@ -15,6 +15,10 @@ function homeController($scope,$http,$route, $routeParams, $location){
     };
 }
 
+function searchController($scope,$http,$route, $routeParams, $location){
+    
+}
+
 
 // function HomeController($scope,$http,$route, $routeParams, $location) {
 //     $scope.$route = $route;

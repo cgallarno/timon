@@ -1,9 +1,8 @@
 "use strict";
 
 var app = angular.module('myApp',[], function($routeProvider, $locationProvider){
-	$routeProvider.when('/', { templateUrl: theme_tpl_directory + 'home.tpl.html', controller: homeController });
-	$routeProvider.when('/albums', { templateUrl: theme_tpl_directory + 'albums.tpl.html', controller: homeController });
-	$routeProvider.when('/artists', { templateUrl: theme_tpl_directory + 'artists.tpl.html', controller: homeController });
+    $routeProvider.when('/', { templateUrl: theme_tpl_directory + 'home.tpl.html', controller: homeController });
+	$routeProvider.when('/search', { templateUrl: theme_tpl_directory + 'search.tpl.html', controller: searchController });
 	// $routeProvider.when('/read', { templateUrl: theme_tpl_directory + 'read.tpl.html', controller: GeoItemListController });
 	// $routeProvider.when('/create', { templateUrl: theme_tpl_directory + 'create.tpl.html', controller: CreateController });
 	// $routeProvider.when('/update', { templateUrl: theme_tpl_directory + 'update.tpl.html', controller: GeoItemListController });
