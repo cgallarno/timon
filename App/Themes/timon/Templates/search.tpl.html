@@ -6,7 +6,7 @@
 	</div>
 </p>
 <div class="row-fluid">
-	<h1>Albums</h1>
+	<h1>{{SelectedTab}}</h1>
 	<ul>
 		<li ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.album_name'">
 			<h4>{{song.track.track_name}}</h4>

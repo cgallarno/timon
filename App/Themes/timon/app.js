@@ -50,14 +50,19 @@ app.run(function($rootScope, $templateCache, $location) {
     $rootScope.GetTabList = function() {
  		return theme_tpl_directory + 'tabs.tpl.html';
     };
+    $rootScope.ChangeTabName = function(tab){
+    	$rootScope.SelectedTab = tab;
+    }
     $rootScope.GetSelectedTabContent = function(tab){
     	console.log(tab)
     	switch(tab)
     	{
     		case "artists":
+    			$rootScope.ChangeTabName(tab);
     			return theme_tpl_directory + 'artists.tpl.html';
     		break;
     		default:
+    			$rootScope.ChangeTabName(tab);
     			return theme_tpl_directory + 'albums.tpl.html';
     			break;
     	}
