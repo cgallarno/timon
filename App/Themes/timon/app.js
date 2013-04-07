@@ -36,8 +36,17 @@ app.run(function($rootScope, $templateCache, $location) {
 
     // Shared Navigation elements
     $rootScope.navClass = function (page) {
-        var currentRoute = $location.path().substring(1) || 'home';
-        return page === currentRoute ? 'active' : '';
+        var currentRoute = $rootScope.SelectedTab || 'Tracks';
+        var result = (page == currentRoute ? 'active' : '');
+        // if (page == currentRoute){
+        // 	result = 'active';
+        // }
+        // else{
+        // 	result = 'not active';
+        // }
+
+        console.log(page + ' ' + $location.path());
+        return result;
     };
     $rootScope.SaveToQueue = function(trackId, username){
     	console.log(trackId, username);
