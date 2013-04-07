@@ -28,6 +28,12 @@ app.run(function($rootScope, $templateCache, $location) {
     $rootScope.username = "braveDonkey3343";
     $rootScope.menuStateOpen = false;
 
+    	$rootScope.playSong = function(){
+			//console.log('play');
+			audioElement.play(); 
+
+		}
+
     // Shared Navigation elements
     $rootScope.navClass = function (page) {
         var currentRoute = $rootScope.SelectedTab || 'Tracks';

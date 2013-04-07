@@ -10,8 +10,6 @@ function homeController($scope,$http,$route, $routeParams, $location){
 			  success: function(data){ //console.log('data success', data); 
 			}
 		});
-
-		return data.message.body.track_list;
     };
     
 }
