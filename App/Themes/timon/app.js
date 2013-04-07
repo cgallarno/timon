@@ -55,12 +55,12 @@ app.run(function($rootScope, $templateCache, $location) {
 
 			//close
 			//alert('closing');
-			$('#wrapper, #header').animate({ marginLeft: 0 }, 150);
+			$('#wrapper, #header, #player').animate({ marginLeft: 0 }, 150);
 	        $('.menu').removeClass('active');
 		}else{
 			//open
 			//alert('opening')
-			$('#wrapper, #header').animate({ marginLeft: 160 }, 150);
+			$('#wrapper, #header, #player').animate({ marginLeft: 160 }, 150);
 	        $('.menu').addClass('active');
 		}
 

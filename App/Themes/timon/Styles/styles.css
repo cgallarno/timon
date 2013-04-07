@@ -25,6 +25,10 @@ html, body, #main-view{
 	float: left;
 }
 
+#header{
+	width: 100%;
+}
+
 #header .nav{
 	/*position: absolute;*/
 	top: 15px;
