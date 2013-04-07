@@ -24,6 +24,7 @@ app.run(function($rootScope, $templateCache, $location) {
     $rootScope.Top50Tracks = top50data.message.body.track_list;
     $rootScope.SelectedTab = "Tracks";
     $rootScope.username = "braveDonkey3343";
+    $rootScope.menuStateOpen = false;
 
     // Shared Navigation elements
     $rootScope.navClass = function (page) {
@@ -47,6 +48,25 @@ app.run(function($rootScope, $templateCache, $location) {
     	//console.log($rootScope.SelectedTab)
     	return (tab == $rootScope.SelectedTab);
     };
+    $rootScope.menuToggle = function(){
+    	//alert('clicked');
+		//if($(this).hasClass('active')){
+        if($rootScope.menuStateOpen){    
+
+			//close
+			//alert('closing');
+			$('#wrapper, #header').animate({ marginLeft: 0 }, 150);
+	        $('.menu').removeClass('active');
+		}else{
+			//open
+			//alert('opening')
+			$('#wrapper, #header').animate({ marginLeft: 160 }, 150);
+	        $('.menu').addClass('active');
+		}
+
+        // toggle menu state variable
+        $rootScope.menuStateOpen = !$rootScope.menuStateOpen; 
+    }
     $rootScope.GetNavigation = function(){
         return theme_tpl_directory + 'nav.tpl.html';
     }; 
