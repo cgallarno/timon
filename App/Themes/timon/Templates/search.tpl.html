@@ -1,5 +1,4 @@
 <ng-include src="GetNavigation()"></ng-include>
-
 <div id="wrapper">
 	<div class="container-fluid">
 		<ng-include src="GetTabList()"></ng-include>
@@ -10,13 +9,23 @@
 		</p>
 		<div class="row-fluid">
 			<h1>{{SelectedTab}}</h1>
-			<ul>
-				<li ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.album_name'">
+			<ul ng-switch on="SelectedTab">
+				<li ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.album_name'" ng-switch-when="Tracks" ng-click="SaveToQueue(song.track.track_id, username)">
 					<h4>{{song.track.track_name}}</h4>
 					<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.album_name}}" /> 
 					<p>{{song.track.artist_name}} </p>
 				</li>
 			</ul>
+			<li ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.artist_name'" ng-switch-when="Artists" ng-click="SaveToQueue(song.track.track_id, username)">
+				<h4>{{song.track.artist_name}}</h4>
+				<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
+				<!-- <p>{{song.track.artist_name}} </p> -->
+			</li>	
+			<li ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.album_name'" ng-switch-when="Albums" ng-click="SaveToQueue(song.track.track_id, username)">
+				<h4>{{song.track.album_name}}</h4>
+				<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.album_name}}" /> 
+				<p>{{song.track.artist_name}} </p>
+			</li>
 		</div>
 	</div>
 </div>

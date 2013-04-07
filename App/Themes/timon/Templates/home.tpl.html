@@ -14,7 +14,7 @@
 		<div class="row-fluid">
 			<h1>Top 5 Tracks</h1>
 			<ul>
-				<li ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.artist_name'">
+				<li ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.artist_name'" ng-click="SaveToQueue(song.track.track_id, username)">
 					<h4>{{song.track.track_name}}</h4>
 					<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
 					<p>{{song.track.artist_name}} </p>

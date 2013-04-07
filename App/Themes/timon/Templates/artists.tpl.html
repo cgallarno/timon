@@ -9,9 +9,9 @@
 	<h1>Artists</h1>
 	<ul>
 		<li ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.artist_name'">
-			<h4>{{song.track.track_name}}</h4>
+			<h4>{{song.track.artist_name}}</h4>
 			<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
-			<p>{{song.track.artist_name}} </p>
+			<!-- <p>{{song.track.artist_name}} </p> -->
 		</li>
 	</ul> 
 </div>
