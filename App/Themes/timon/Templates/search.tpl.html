@@ -21,7 +21,7 @@
 					</li>
 				</ul>
 				<ul class="results nav nav-list">
-					<li ng-show="IsSearchTabSelected('Me')" ng-repeat="song in MyFavorites | filter: search | orderBy: 'song.artist_name'" ng-click="SaveToQueue(song.track.track_name, song.track.album_coverart_100x100, song.track.artist_name, username)">
+					<li ng-show="IsSearchTabSelected('Me')" ng-repeat="song in MyFavorites | filter: search | orderBy: 'song.artist_name'" ng-click="SaveToQueue(song.track_name, song.album_coverart_100x100, song.artist_name, username)">
 						<img  class="artwork" width="100%" src="App/Themes/timon/img/bradsucks.png" alt="{{song.artist_name}}" /> 
 						<h4>{{song.artist_name}}</h4>
 						 <p>{{song.lyrics_body}} </p>

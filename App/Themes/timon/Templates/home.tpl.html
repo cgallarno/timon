@@ -36,20 +36,20 @@
 			<div id="top5" class="song-row">
 				<div class="song-row">
 					<!-- Tracks -->
-					<div class="song" ng-show="IsSearchTabSelected('Tracks')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.track_name'" style="background-image: url('App/Themes/timon/img/{{song.track.track_id}}.jpg');" ng-click="SaveToQueue(song.track.track_id, username)" >
+					<div class="song" ng-show="IsSearchTabSelected('Tracks')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.track_name'" style="background-image: url('App/Themes/timon/img/{{song.track.track_id}}.jpg');" ng-click="SaveToQueue(song.track.track_name, song.track.album_coverart_100x100, song.track.artist_name, username)" >
 						<div class="song-info"><span class="title">{{song.track.track_name}}</span><br /><span class="artist">{{song.track.artist_name}}</span></div>
 					</div>
 					<!-- Albums -->
-					<div class="song" ng-show="IsSearchTabSelected('Albums')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.album_name'" style="background-image: url('App/Themes/timon/img/{{song.track.track_id}}.jpg');" ng-click="SaveToQueue(song.track.track_id, username)" >
+					<div class="song" ng-show="IsSearchTabSelected('Albums')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.album_name'" style="background-image: url('App/Themes/timon/img/{{song.track.track_id}}.jpg');" ng-click="SaveToQueue(song.track.track_name, song.track.album_coverart_100x100, song.track.artist_name, username)" >
 						<div class="song-info"><span class="title">{{song.track.track_name}}</span><br /><span class="artist">{{song.track.artist_name}}</span></div>
 					</div>
 					<!-- Artists -->
-					<div class="song" ng-show="IsSearchTabSelected('Artists')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.artist_name'" style="background-image: url('App/Themes/timon/img/{{song.track.track_id}}.jpg');" ng-click="SaveToQueue(song.track.track_id, username)" >
+					<div class="song" ng-show="IsSearchTabSelected('Artists')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.artist_name'" style="background-image: url('App/Themes/timon/img/{{song.track.track_id}}.jpg');" ng-click="SaveToQueue(song.track.track_name, song.track.album_coverart_100x100, song.track.artist_name, username)" >
 						<div class="song-info"><span class="title">{{song.track.track_name}}</span><br /><span class="artist">{{song.track.artist_name}}</span></div>
 					</div>										
 				</div>
 			</div>
 		</div>
-		<div id="player" ng-click="playSong()"></div>
+		<div id="player" ng-click="SongToggle()"></div>
 </div>
 
