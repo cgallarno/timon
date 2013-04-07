@@ -32,8 +32,17 @@ html, body, #main-view{
 	left: auto;
 }
 
+.search input{
+	background: #222;
+	border-radius: 0;
+	padding: 5px;
+	border-color: #444;
+	display: block;
+	color: #ccc;
+}
+
 .container-fluid{
-	padding-top: 50px;
+	/*padding-top: 50px;*/
 }
 
 #wrapper{
