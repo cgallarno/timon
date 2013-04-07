@@ -205,4 +205,15 @@ html, body, #main-view{
 	width: 100%;
 }
 
+.disc{
+	background: #666;
+	height: 90px;
+	width: 90px;
+	padding: 5px;
+	float: left;
+}
+
+#tracks li{
+	clear: left;
+}
 
