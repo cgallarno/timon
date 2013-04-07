@@ -22,9 +22,10 @@
 				</ul>
 				<ul class="results nav nav-list">
 					<li ng-show="IsSearchTabSelected('Me')" ng-repeat="song in MyFavorites | filter: search | orderBy: 'song.artist_name'" ng-click="SaveToQueue(song.track_name, song.album_coverart_100x100, song.artist_name, username)">
-						<img  class="artwork" width="100%" src="App/Themes/timon/img/bradsucks.png" alt="{{song.artist_name}}" /> 
 						<h4>{{song.artist_name}}</h4>
-						 <p>{{song.lyrics_body}} </p>
+						<img  class="artwork" width="100%" src="App/Themes/timon/img/bradsucks.png" alt="{{song.artist_name}}" /> 
+						<br>
+						<p ng-repeat="line in song.lyrics_body">{{line}} </p>
 					</li>	
 				</ul>				
 <!-- 				<ul>
@@ -32,7 +33,7 @@
 						<h4>{{song.track.artist_name}}</h4>
 						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
 						
-					</li>	
+					</li	
 				</ul> -->				
 			</div>
 	</div>
