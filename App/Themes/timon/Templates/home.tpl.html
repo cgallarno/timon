@@ -26,9 +26,18 @@
 		<div class="song-row-container">
 			<div id="top5" class="song-row">
 				<div class="song-row">
-					<div class="song" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.artist_name'" style="background-image: url('App/Themes/timon/img/{{song.track.track_id}}.jpg');">
+					<!-- Tracks -->
+					<div class="song" ng-show="IsSearchTabSelected('Tracks')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.track_name'" style="background-image: url('App/Themes/timon/img/{{song.track.track_id}}.jpg');" ng-click="SaveToQueue(song.track.track_id, username)" >
 						<div class="song-info"><span class="title">{{song.track.track_name}}</span><br /><span class="artist">{{song.track.artist_name}}</span></div>
 					</div>
+					<!-- Albums -->
+					<div class="song" ng-show="IsSearchTabSelected('Albums')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.album_name'" style="background-image: url('App/Themes/timon/img/{{song.track.track_id}}.jpg');" ng-click="SaveToQueue(song.track.track_id, username)" >
+						<div class="song-info"><span class="title">{{song.track.track_name}}</span><br /><span class="artist">{{song.track.artist_name}}</span></div>
+					</div>
+					<!-- Artists -->
+					<div class="song" ng-show="IsSearchTabSelected('Artists')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.artist_name'" style="background-image: url('App/Themes/timon/img/{{song.track.track_id}}.jpg');" ng-click="SaveToQueue(song.track.track_id, username)" >
+						<div class="song-info"><span class="title">{{song.track.track_name}}</span><br /><span class="artist">{{song.track.artist_name}}</span></div>
+					</div>										
 				</div>
 			</div>
 		</div>
@@ -58,7 +67,7 @@
 					<li ng-show="IsSearchTabSelected('Artists')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.artist_name'" ng-click="SaveToQueue(song.track.track_id, username)" ng-animate="{enter: 'custom-repeat-enter', leave: 'custom-repeat-leave', move: 'custom-repeat-move'}">
 						<h4>{{song.track.artist_name}}</h4>
 						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
-						<!-- <p>{{song.track.artist_name}} </p> -->
+						 <p>{{song.track.artist_name}} </p> 
 					</li>	
 				</ul>
 				<ul>
