@@ -13,6 +13,7 @@ function homeController($scope,$http,$route, $routeParams, $location){
 
 		return data.message.body.track_list;
     };
+    
 }
 
 function searchController($scope,$http,$route, $routeParams, $location){

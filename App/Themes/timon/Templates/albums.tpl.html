@@ -8,8 +8,8 @@
 <div class="row-fluid">
 	<h1>Albums</h1>
 	<ul>
-		<li ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.album_name'">
-			<h4>{{song.track.track_name}}</h4>
+		<li ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.album_name'" >
+			<h4>{{song.track.album_name}}</h4>
 			<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.album_name}}" /> 
 			<p>{{song.track.artist_name}} </p>
 		</li>
