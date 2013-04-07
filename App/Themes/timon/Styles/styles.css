@@ -13,61 +13,116 @@ html, body, #main-view{
 	box-shadow: inset -8px 0px 8px 0px rgba(0, 0, 0, .2);
 	float:left;
 }
-.nav-list > li > a {
-padding: 15px 15px;
-border-bottom: 1px solid hsl(25, 1%, 20%);
-color: #eee;
-text-shadow: 0px 0px 0px #0;
-        filter: dropshadow(color=#0, offx=0, offy=0);
+
+.menu{
+	background: url('../img/menu-btn.png') no-repeat;
+	width: 83px;
+	height: 64px;
+	margin-top:25px;
+	margin-left:25px;
+	float: left;
 }
 
-.nav > li > a:hover, .nav > li > a:focus{
-	background: rgba(255, 255, 255, .2);
-}
-
-#nav li{
-
+#header .nav{
+	position: absolute;
+	top: 25px;
+	left: 50%;
+	margin-left:-140px;
 }
 
 #wrapper{
 	position: absolute;
+	background-image:url('../img/bg.jpg');
 	width: 100%;
 	min-height: 100%;
-	background: #222;
+	margin-top: 118px;
+	/*max-width: 320px;*/
 }
 
 .navbar-inverse .navbar-inner{
-	background: #ef3737;
-	background: -moz-linear-gradient(top,  hsl(0,85%,58%) 0%, hsl(0,71%,41%) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,hsl(0,85%,58%)), color-stop(100%,hsl(0,71%,41%)));
-	background: -webkit-linear-gradient(top,  hsl(0,85%,58%) 0%,hsl(0,71%,41%) 100%);
-	background: -o-linear-gradient(top,  hsl(0,85%,58%) 0%,hsl(0,71%,41%) 100%);
-	background: -ms-linear-gradient(top,  hsl(0,85%,58%) 0%,hsl(0,71%,41%) 100%);
-	background: linear-gradient(to bottom,  hsl(0,85%,58%) 0%,hsl(0,71%,41%) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef3737', endColorstr='#b21e1e',GradientType=0 );
-	border-bottom-color: hsl(0, 85%, 35%);
-
-
+	background: url('../img/header.jpg');
+	height: 118px;
+	border: 0;
 }
 
-.navbar-inverse .brand{
-	color: #fff;
-	display: block;
-	text-align: center;
-	float: none;
+.song-row-container{
+	width: 100%;
+	overflow-x: scroll;
 }
 
-.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
-	background-color: #ef3737;
+.song-row{
+	margin-top: 70px;
+	width: 1215px;
+	padding: 0 20px 0;
 }
 
-.top-imgs{
-	height: 218px;
-	overflow:hidden;
-	border-radius: 4px;
+.song-row .song{
+	position: relative;
+	float: left;
+	margin-right: 30px;
+	width: 213px;
+	height:283px;
+	background-repeat: no-repeat;
 }
 
-.top-imgs img{
-	width: 150%;
+.song .song-info{
+	position: absolute;
+	bottom:0;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+   color: hsla(0,0%,100%,.7);
 }
+
+.song-info .title{
+	font-size: 20px;
+}
+
+.song-info .artist{
+	font-size: 14px;
+}
+
+#recommended .song:nth-child(1){
+	background-image: url('../img/imagine-dragons.png');
+}
+
+#recommended .song:nth-child(2){
+	background-image: url('../img/two-door-cinema-club.png');
+}
+
+#recommended .song:nth-child(3){
+	background-image: url('../img/arcade-fire.png');
+}
+
+#recommended .song:nth-child(4){
+	background-image: url('../img/linkin-park.png');
+}
+
+#recommended .song:nth-child(5){
+	background-image: url('../img/rihanna.png');
+}
+
+#top5-header{
+	background: url('../img/top5-header.jpg');
+	height: 45px;
+	margin: 60px 0 40px;
+}
+
+#tracks{
+	background: url('../img/tracks.png') no-repeat;
+	width: 113px;
+	height: 64px;
+}
+
+#albums{
+	background: url('../img/albums.png') no-repeat;
+	width: 111px;
+	height: 64px;
+}
+
+#me{
+	background: url('../img/me.png') no-repeat;
+	width: 115px;
+	height: 64px;
+}
+
 
