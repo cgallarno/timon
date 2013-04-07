@@ -7,6 +7,7 @@ html, body, #main-view{
 }
 
 #nav{
+	position: fixed;
 	width: 220px;
 	height: 100%;
 	-webkit-box-shadow: inset -8px 0px 8px 0px rgba(0, 0, 0, .2);
@@ -16,18 +17,19 @@ html, body, #main-view{
 
 .menu{
 	background: url('../img/menu-btn.png') no-repeat;
-	width: 83px;
-	height: 64px;
-	margin-top:25px;
-	margin-left:25px;
+	background-size:contain;
+	width: 43px;
+	height: 34px;
+	margin-top:15px;
+	margin-left:15px;
 	float: left;
 }
 
 #header .nav{
-	position: absolute;
-	top: 25px;
-	left: 50%;
-	margin-left:-140px;
+	/*position: absolute;*/
+	top: 15px;
+	float: right;
+	left: auto;
 }
 
 .container-fluid{
@@ -39,13 +41,13 @@ html, body, #main-view{
 	background-image:url('../img/bg.jpg');
 	width: 100%;
 	min-height: 100%;
-	margin-top: 118px;
+	margin-top: 64px;
 	/*max-width: 320px;*/
 }
 
 .navbar-inverse .navbar-inner{
-	background: url('../img/header.jpg');
-	height: 118px;
+	background: url('../img/header.jpg') center bottom;
+	height: 64px;
 	border: 0;
 }
 
@@ -55,34 +57,42 @@ html, body, #main-view{
 }
 
 .song-row{
-	margin-top: 70px;
-	width: 1215px;
+	margin-top: 30px;
+	width: 690px;
+	float: left;
 	padding: 0 20px 0;
+}
+
+#top5 .song-row{
+	padding-left: 0px;
 }
 
 .song-row .song{
 	position: relative;
 	float: left;
 	margin-right: 30px;
-	width: 213px;
-	height:283px;
+	width: 100px;
+	height:149px;
+	background-size: contain;
 	background-repeat: no-repeat;
+	line-height: 15px;
 }
 
 .song .song-info{
 	position: absolute;
+	height: 47px;
 	bottom:0;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    font-weight: 300;
-   color: hsla(0,0%,100%,.7);
+   color: hsla(0,0%,100%,.6);
 }
 
 .song-info .title{
-	font-size: 20px;
+	font-size: 14px;
 }
 
 .song-info .artist{
-	font-size: 14px;
+	font-size: 11px;
 }
 
 #recommended .song:nth-child(1){
@@ -106,27 +116,31 @@ html, body, #main-view{
 }
 
 #top5-header{
-	background: url('../img/top5-header.jpg');
+	background: url('../img/top5-header.jpg') no-repeat;
+	background-size: cover;
 	height: 45px;
-	margin: 60px 0 40px;
+	margin-top: 20px;
 }
 
 #tracks{
 	background: url('../img/tracks.png') no-repeat;
-	width: 113px;
-	height: 64px;
+	background-size: contain;
+	width: 61px;
+	height: 34px;
 }
 
 #albums{
 	background: url('../img/albums.png') no-repeat;
-	width: 111px;
-	height: 64px;
+	background-size: contain;
+	width: 59px;
+	height: 34px;
 }
 
 #me{
 	background: url('../img/me.png') no-repeat;
-	width: 115px;
-	height: 64px;
+	background-size: contain;
+	width:62px;
+	height: 34px;
 }
 /* AngularJS Animations */
 .custom-enter-setup,
@@ -162,6 +176,20 @@ html, body, #main-view{
 }
 .custom-move-setup.custom-move-start {
   opacity:1;
+}
+
+#top5{
+	padding-bottom:100px;
+}
+
+#player{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: url('../img/player.jpg') no-repeat center bottom;
+	background-size: contain;
+	height: 75px;
+	width: 100%;
 }
 
 

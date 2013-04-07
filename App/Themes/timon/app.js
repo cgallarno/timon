@@ -43,6 +43,21 @@ app.run(function($rootScope, $templateCache, $location) {
     	//console.log($rootScope.SelectedTab)
     	return (tab == $rootScope.SelectedTab);
     };
+    $rootScope.menuToggle = function(){
+    	alert('clicked');
+		if($(this).hasClass('active')){
+			//close
+			alert('closing');
+			$('#wrapper, #header').animate({ marginLeft: 0 }, 150);
+	        $('.menu').removeClass('active');
+		}else{
+			//open
+			alert('opening')
+			$('#wrapper, #header').animate({ marginLeft: 160 }, 150);
+	        $('.menu').addClass('active');
+		}
+
+    }
     $rootScope.GetNavigation = function(){
         return theme_tpl_directory + 'nav.tpl.html';
     }; 

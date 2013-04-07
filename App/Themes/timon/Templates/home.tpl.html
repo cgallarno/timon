@@ -32,6 +32,7 @@
 				</div>
 			</div>
 		</div>
+		<div id="player"></div>
 </div>
 
 <!-- <div class="row-fluid">
@@ -59,7 +60,7 @@
 						<h4>{{song.track.artist_name}}</h4>
 						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
 						<!-- <p>{{song.track.artist_name}} </p> -->
-					</li>	
+	<!-- 				</li>	
 				</ul>
 				<ul>
 					<li ng-show="IsSearchTabSelected('Albums')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.album_name'" ng-click="SaveToQueue(song.track.track_id, username)" ng-animate="{enter: 'custom-repeat-enter', leave: 'custom-repeat-leave', move: 'custom-repeat-move'}">
