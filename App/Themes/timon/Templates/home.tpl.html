@@ -1,4 +1,13 @@
 <ng-include src="GetNavigation()"></ng-include>
+<script>
+	var audioElement = document.createElement('audio');
+		audioElement.setAttribute('src', 'App/music/badsign.mp3');
+		audioElement.load()
+		console.log('elem', audioElement.src);
+		audioElement.addEventListener("load", function() { 
+			audioElement.play(); 
+		}, true);
+</script>
 <div id="wrapper">
 		<div class="song-row-container">
 			<div id="recommended" class="song-row">
@@ -41,6 +50,6 @@
 				</div>
 			</div>
 		</div>
-		<div id="player"></div>
+		<div id="player" ng-click="playSong()"></div>
 </div>
 

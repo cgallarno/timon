@@ -27,6 +27,9 @@ app.run(function($rootScope, $templateCache, $location) {
     $rootScope.username = "braveDonkey3343";
     $rootScope.menuStateOpen = false;
 
+	$rootScope.playSong = function() { audioElement.play(); };
+    $rootScope.pauseSong = function() { audioElement.pause(); };
+
     // Shared Navigation elements
     $rootScope.navClass = function (page) {
         var currentRoute = $rootScope.SelectedTab || 'Tracks';
@@ -35,11 +38,11 @@ app.run(function($rootScope, $templateCache, $location) {
         //console.log(page + ' ' + $location.path());
         return result;
     };
-    $rootScope.SaveToQueue = function(trackId, username){
-    	console.log(trackId, username);
-
+    $rootScope.SaveToQueue = function(trackName, cover, artist, username){
 		var queueLink = "http://54.234.56.138/tracks.php";
-		$.post(queueLink, {"trackID":trackId,"user":username}, function(data) { console.log(data)});
+		$.post(queueLink, {"trackName":trackName, "cover":cover, "artist":artist, "user":username}, 
+                function(data) { console.log(data)}
+        );
     };
     $rootScope.SetSelectedTab = function(tab){
     	$rootScope.SelectedTab = tab;
