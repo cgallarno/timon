@@ -5,15 +5,15 @@
 			<!-- <h1>	{{ArtistName}}</h1> -->
 		<p class="custom-search">
 			<div class="search">
-				<input type="search"  placeholder="Search..." class="search-field input-large" ng-model="search" />
+				<input type="search"  placeholder="Search..." class="search-field input-block-level" ng-model="search" />
 			</div>
 		</p>
 		<div class="row-fluid">
 			<div>
-				<ul >
+				<ul id="tracks" class="nav nav-list">
 					<li ng-show="IsSearchTabSelected('Tracks')" ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.album_name'"  ng-click="SaveToQueue(song.track.track_id, username)">
+						<div class="disc"><img src="App/Images/disc.png" alt="{{song.track.album_name}}" width="100px"/> </div>
 						<h4>{{song.track.track_name}}</h4>
-						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.album_name}}" /> 
 						<p>{{song.track.artist_name}} </p>
 					</li>
 				</ul>
