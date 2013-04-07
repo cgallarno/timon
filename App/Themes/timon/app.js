@@ -32,7 +32,7 @@ app.run(function($rootScope, $templateCache, $location) {
     $rootScope.Top5Tracks = top5data.message.body.track_list;
     $rootScope.Top50Tracks = top50data.message.body.track_list;
     $rootScope.SelectedTab = "Tracks";
-    $rootScope.username = "braveDonkey";
+    $rootScope.username = "braveDonkey3343";
 
     // Shared Navigation elements
     $rootScope.navClass = function (page) {
@@ -42,8 +42,16 @@ app.run(function($rootScope, $templateCache, $location) {
     $rootScope.SaveToQueue = function(trackId, username){
     	console.log(trackId, username);
 
-		var queueLink = "http://www.facebook.com/l.php?u=http%3A%2F%2F54.234.56.138%2Ftracks.php&h=QAQGAxcCJ&callback=?";
+		var queueLink = "http://54.234.56.138/tracks.php";
 		$.post(queueLink, {"trackID":trackId,"user":username}, function(data) { console.log(data)});
+    };
+    $rootScope.SetSelectedTab = function(tab){
+    	$rootScope.SelectedTab = tab;
+    };
+    $rootScope.IsSearchTabSelected = function(tab){
+    	//console.log(tab);
+    	//console.log($rootScope.SelectedTab)
+    	return (tab == $rootScope.SelectedTab);
     };
     $rootScope.GetNavigation = function(){
         return theme_tpl_directory + 'nav.tpl.html';
