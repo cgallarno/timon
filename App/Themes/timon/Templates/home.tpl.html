@@ -5,6 +5,7 @@
 			<div class="span6 top-imgs"><img src="http://horrordisco.com/wp-content/uploads/2012/11/thrift-shop-large.jpg" alt=""></div>
 			<div class="span6 top-imgs"><img src="http://musictrajectory.com/wp-content/uploads/2013/01/imagine-dragons-night-visions-album-cover-640x420.jpg" alt=""></div>
 		</div>
+		<h1>Top 5 Tracks</h1>
 		<ng-include src="GetTabList()"></ng-include>
 		<p class="custom-search">
 			<div class="search">
@@ -12,24 +13,23 @@
 			</div>
 		</p>
 		<div class="row-fluid">
-			<h1>Top 5 Tracks</h1>
 			<ul>
 				<ul >
-					<li ng-show="IsSearchTabSelected('Tracks')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.album_name'"  ng-click="SaveToQueue(song.track.track_id, username)">
+					<li ng-show="IsSearchTabSelected('Tracks')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.album_name'" ng-click="SaveToQueue(song.track.track_id, username)" ng-animate="{enter: 'custom-repeat-enter', leave: 'custom-repeat-leave', move: 'custom-repeat-move'}">
 						<h4>{{song.track.track_name}}</h4>
 						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.album_name}}" /> 
 						<p>{{song.track.artist_name}} </p>
 					</li>
 				</ul>
 				<ul>
-					<li ng-show="IsSearchTabSelected('Artists')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.artist_name'" ng-click="SaveToQueue(song.track.track_id, username)">
+					<li ng-show="IsSearchTabSelected('Artists')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.artist_name'" ng-click="SaveToQueue(song.track.track_id, username)" ng-animate="{enter: 'custom-repeat-enter', leave: 'custom-repeat-leave', move: 'custom-repeat-move'}">
 						<h4>{{song.track.artist_name}}</h4>
 						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
 						<!-- <p>{{song.track.artist_name}} </p> -->
 					</li>	
 				</ul>
 				<ul>
-					<li ng-show="IsSearchTabSelected('Albums')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.album_name'" ng-click="SaveToQueue(song.track.track_id, username)">
+					<li ng-show="IsSearchTabSelected('Albums')" ng-repeat="song in Top5Tracks | filter: search | orderBy: 'song.track.album_name'" ng-click="SaveToQueue(song.track.track_id, username)" ng-animate="{enter: 'custom-repeat-enter', leave: 'custom-repeat-leave', move: 'custom-repeat-move'}">
 						<h4>{{song.track.album_name}}</h4>
 						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.album_name}}" /> 
 						<p>{{song.track.artist_name}} </p>

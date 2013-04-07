@@ -3,20 +3,7 @@
 var app = angular.module('myApp',[], function($routeProvider, $locationProvider){
     $routeProvider.when('/', { templateUrl: theme_tpl_directory + 'home.tpl.html', controller: homeController });
 	$routeProvider.when('/search', { templateUrl: theme_tpl_directory + 'search.tpl.html', controller: homeController });
-	// $routeProvider.when('/read', { templateUrl: theme_tpl_directory + 'read.tpl.html', controller: GeoItemListController });
-	// $routeProvider.when('/create', { templateUrl: theme_tpl_directory + 'create.tpl.html', controller: CreateController });
-	// $routeProvider.when('/update', { templateUrl: theme_tpl_directory + 'update.tpl.html', controller: GeoItemListController });
-	// $routeProvider.when('/delete', { templateUrl: theme_tpl_directory + 'delete.tpl.html', controller: GeoItemListController });
-	//$routeProvider.when('/index.html', { templateUrl: theme_tpl_directory + 'home.tpl.html', controller: HomeController });
-	// $routeProvider.when('/Tags/', { templateUrl: theme_tpl_directory + 'tags.tpl.html', controller: TagListController });
-	// $routeProvider.when('/Tags/:Name', { templateUrl: theme_tpl_directory + 'tagDetails.tpl.html', controller: TagDetailsController });
-	// $routeProvider.when('/GeoItems/', { templateUrl: theme_tpl_directory + 'geoItems.tpl.html', controller: GeoItemListController });
-	// $routeProvider.when('/read/geo-items-map/:lat/:lng', { templateUrl: theme_tpl_directory + 'geo-items-map.tpl.html', controller: GeoMapController });	
-	// $routeProvider.when('/read/geo-items-map/', { templateUrl: theme_tpl_directory + 'geo-items-map.tpl.html', controller: GeoMapController });	
-	// $routeProvider.when('/read/:Key', { templateUrl: theme_tpl_directory + 'geo-item.tpl.html', controller: GeoItemDetailsController });	
-	// $routeProvider.when('/update/:Key', { templateUrl: theme_tpl_directory + 'edit-geo-item.tpl.html', controller: GeoItemDetailsController });	
-	// $routeProvider.when('/settings/', { templateUrl: theme_tpl_directory + 'settings.tpl.html', controller: SettingsController });
-	// $routeProvider.when('/settingDetails/:id', { templateUrl: theme_tpl_directory + 'settingDetail.tpl.html', controller: SettingDetailsController });
+	$routeProvider.when('/queue', { templateUrl: theme_tpl_directory + 'queue.tpl.html', controller: homeController });
 	//$scope.params = $routeParams;
 });
 
@@ -38,14 +25,8 @@ app.run(function($rootScope, $templateCache, $location) {
     $rootScope.navClass = function (page) {
         var currentRoute = $rootScope.SelectedTab || 'Tracks';
         var result = (page == currentRoute ? 'active' : '');
-        // if (page == currentRoute){
-        // 	result = 'active';
-        // }
-        // else{
-        // 	result = 'not active';
-        // }
 
-        console.log(page + ' ' + $location.path());
+        //console.log(page + ' ' + $location.path());
         return result;
     };
     $rootScope.SaveToQueue = function(trackId, username){
