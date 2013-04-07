@@ -27,7 +27,7 @@
 				<ul>
 					<li ng-show="IsSearchTabSelected('Me')" ng-repeat="song in MyFavorites | filter: search | orderBy: 'song.artist_name'" ng-click="SaveToQueue('889978', username)">
 						<h4>{{song.artist_name}}</h4>
-						<img src="{{song.album_coverart_100x100}}" alt="{{song.artist_name}}" /> 
+						<img src="App/Themes/timon/img/bradsucks.png" alt="{{song.artist_name}}" /> 
 						 <p>{{song.lyrics_body}} </p>
 					</li>	
 				</ul>				
