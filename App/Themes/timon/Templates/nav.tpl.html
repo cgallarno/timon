@@ -11,9 +11,9 @@
 	  <div class="navbar-inner">
 	  	<div class="menu" ng-click="menuToggle()"></div>
 	  	<ul class="nav">
-	      <li id="tracks"></li>
-	      <li id="albums"></li>
-	      <li id="me"></li>
+	      <li id="tracks" ng-click="SetSelectedTab('Tracks')"></li>
+	      <li id="albums" ng-click="SetSelectedTab('Albums')"></li>
+	      <li id="me" ng-click="SetSelectedTab('Artists')"></li>
 	    </ul>
 	  </div>
 	</div>

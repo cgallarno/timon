@@ -39,8 +39,8 @@ app.run(function($rootScope, $templateCache, $location) {
     	$rootScope.SelectedTab = tab;
     };
     $rootScope.IsSearchTabSelected = function(tab){
-    	//console.log(tab);
-    	//console.log($rootScope.SelectedTab)
+    	console.log(tab);
+    	console.log($rootScope.SelectedTab)
     	return (tab == $rootScope.SelectedTab);
     };
     $rootScope.menuToggle = function(){
