@@ -17,19 +17,26 @@
 					</li>
 				</ul>
 				<ul>
-					<li ng-show="IsSearchTabSelected('Artists')" ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.artist_name'" ng-click="SaveToQueue(song.track.track_id, username)">
-						<h4>{{song.track.artist_name}}</h4>
-						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
-						<!-- <p>{{song.track.artist_name}} </p> -->
-					</li>	
-				</ul>
-				<ul>
 					<li ng-show="IsSearchTabSelected('Albums')" ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.album_name'" ng-click="SaveToQueue(song.track.track_id, username)">
 						<h4>{{song.track.album_name}}</h4>
 						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.album_name}}" /> 
 						<p>{{song.track.artist_name}} </p>
 					</li>
 				</ul>
+				<ul>
+					<li ng-show="IsSearchTabSelected('Me')" ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.artist_name'" ng-click="SaveToQueue(song.track.track_id, username)">
+						<h4>{{song.track.artist_name}}</h4>
+						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
+						<!-- <p>{{song.track.artist_name}} </p> -->
+					</li>	
+				</ul>				
+<!-- 				<ul>
+					<li ng-show="IsSearchTabSelected('Artists')" ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.artist_name'" ng-click="SaveToQueue(song.track.track_id, username)">
+						<h4>{{song.track.artist_name}}</h4>
+						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
+						
+					</li>	
+				</ul> -->				
 			</div>
 		</div>
 	</div>
