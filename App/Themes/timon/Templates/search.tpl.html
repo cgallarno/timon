@@ -21,10 +21,10 @@
 					</li>
 				</ul>
 				<ul class="results nav nav-list">
-					<li ng-show="IsSearchTabSelected('Me')" ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.artist_name'" ng-click="SaveToQueue(song.track.track_id, username)">
-						<div class="artwork"><img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.album_name}}" /></div> 
-						<h4>{{song.track.artist_name}}</h4>
-						<!-- <p>{{song.track.artist_name}} </p> -->
+					<li ng-show="IsSearchTabSelected('Me')" ng-repeat="song in MyFavorites | filter: search | orderBy: 'song.artist_name'" ng-click="SaveToQueue('889978', username)">
+						<img  class="artwork" width="100%" src="App/Themes/timon/img/bradsucks.png" alt="{{song.artist_name}}" /> 
+						<h4>{{song.artist_name}}</h4>
+						 <p>{{song.lyrics_body}} </p>
 					</li>	
 				</ul>				
 <!-- 				<ul>
