@@ -2,6 +2,7 @@
 <div id="wrapper">
 	<div class="container-fluid">
 		<!-- <ng-include src="GetTabList()"></ng-include> -->
+			<!-- <h1>	{{ArtistName}}</h1> -->
 		<p class="custom-search">
 			<div class="search">
 				<input type="search"  placeholder="Search..." class="search-field input-large" ng-model="search" />
@@ -24,10 +25,10 @@
 					</li>
 				</ul>
 				<ul>
-					<li ng-show="IsSearchTabSelected('Me')" ng-repeat="song in Top50Tracks | filter: search | orderBy: 'song.track.artist_name'" ng-click="SaveToQueue(song.track.track_id, username)">
-						<h4>{{song.track.artist_name}}</h4>
-						<img src="{{song.track.album_coverart_100x100}}" alt="{{song.track.artist_name}}" /> 
-						<!-- <p>{{song.track.artist_name}} </p> -->
+					<li ng-show="IsSearchTabSelected('Me')" ng-repeat="song in MyFavorites | filter: search | orderBy: 'song.artist_name'" ng-click="SaveToQueue('889978', username)">
+						<h4>{{song.artist_name}}</h4>
+						<img src="{{song.album_coverart_100x100}}" alt="{{song.artist_name}}" /> 
+						 <p>{{song.lyrics_body}} </p>
 					</li>	
 				</ul>				
 <!-- 				<ul>
